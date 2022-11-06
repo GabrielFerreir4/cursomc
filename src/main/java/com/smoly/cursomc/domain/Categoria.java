@@ -3,6 +3,13 @@ package com.smoly.cursomc.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.annotation.Generated;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Categoria implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -10,8 +17,11 @@ public class Categoria implements Serializable {
 	quer dizer que os objetos dessa
 	classe podem ser convertidos em bytes, para que os
 	objetos possam ser gravados em arquivos,trafegar em rede..*/
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
+	
 	public Categoria() {
 	}
 	public Categoria(Integer id, String name) {
